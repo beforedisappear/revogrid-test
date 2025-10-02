@@ -1,0 +1,9 @@
+.total-row-cell {
+  background: #fff7e6; /* мягкий оранжевый */
+  font-weight: 600;
+}
+
+.total-col-cell {
+  background: #f0f9ff; /* мягкий голубой */
+  font-weight: 600;
+}

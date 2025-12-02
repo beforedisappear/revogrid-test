@@ -4,6 +4,10 @@ import { DataGrid } from "./DataGrid/DataGrid";
 import { useData } from "./useData";
 import { Link, Routes, Route, Navigate } from "react-router-dom";
 import { DataGridLikePivot } from "./DataGridLikePivot/DataGridLikePivot";
+import { AsyncColumnsGrid } from "./AsyncColumnsGrid/AsyncColumnsGrid";
+import { GroupedColumnsGrid } from "./GroupedColumnsGrid/GroupedColumnsGrid";
+import { MultiRowHeadersGrid } from "./MultiRowHeadersGrid/MultiRowHeadersGrid";
+import ValidationGrid from "./ValidationGrid/ValidationGrid";
 
 function App() {
   const { rows, columns, loaded, error } = useData();
@@ -14,6 +18,10 @@ function App() {
         <Link to="/grid">Data Grid</Link>
         <Link to="/pivot">Pivot Table</Link>
         <Link to="/grid-like-pivot">Data Grid Like Pivot</Link>
+        <Link to="/async-columns">Async Columns Grid</Link>
+        <Link to="/grouped-columns">Grouped Columns Grid</Link>
+        <Link to="/multi-row-headers">Multi Row Headers Grid</Link>
+        <Link to="/validation">Validation Grid</Link>
       </nav>
       {!loaded && <div>Загрузка...</div>}
       {error && <div style={{ color: "red" }}>Ошибка: {error}</div>}
@@ -29,6 +37,10 @@ function App() {
             element={<DataGrid source={rows} columns={columns} />}
           />
           <Route
+            path="/async-columns"
+            element={<AsyncColumnsGrid rows={rows} />}
+          />
+          <Route
             path="/grid-like-pivot"
             element={
               <DataGridLikePivot
@@ -42,6 +54,9 @@ function App() {
               />
             }
           />
+          <Route path="/grouped-columns" element={<GroupedColumnsGrid />} />
+          <Route path="/multi-row-headers" element={<MultiRowHeadersGrid />} />
+          <Route path="/validation" element={<ValidationGrid />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       )}

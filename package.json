@@ -12,7 +12,10 @@
   "dependencies": {
     "@revolist/react-datagrid": "^4.17.3",
     "@revolist/revogrid": "^4.17.3",
+    "@revolist/revogrid-column-date": "^2.0.25",
     "@revolist/rv-pro-trial": "^1.7.2",
+    "@tanstack/react-query": "^5.90.7",
+    "antd": "^6.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.1"

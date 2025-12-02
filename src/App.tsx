@@ -8,6 +8,7 @@ import { AsyncColumnsGrid } from "./AsyncColumnsGrid/AsyncColumnsGrid";
 import { GroupedColumnsGrid } from "./GroupedColumnsGrid/GroupedColumnsGrid";
 import { MultiRowHeadersGrid } from "./MultiRowHeadersGrid/MultiRowHeadersGrid";
 import ValidationGrid from "./ValidationGrid/ValidationGrid";
+import AntdSelectGrid from "./AntdSelectGrid/AntdSelectGrid";
 
 function App() {
   const { rows, columns, loaded, error } = useData();
@@ -22,6 +23,7 @@ function App() {
         <Link to="/grouped-columns">Grouped Columns Grid</Link>
         <Link to="/multi-row-headers">Multi Row Headers Grid</Link>
         <Link to="/validation">Validation Grid</Link>
+        <Link to="/antd-select-grid">RevoGrid + AntD Select</Link>
       </nav>
       {!loaded && <div>Загрузка...</div>}
       {error && <div style={{ color: "red" }}>Ошибка: {error}</div>}
@@ -57,6 +59,7 @@ function App() {
           <Route path="/grouped-columns" element={<GroupedColumnsGrid />} />
           <Route path="/multi-row-headers" element={<MultiRowHeadersGrid />} />
           <Route path="/validation" element={<ValidationGrid />} />
+          <Route path="/antd-select-grid" element={<AntdSelectGrid />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       )}
